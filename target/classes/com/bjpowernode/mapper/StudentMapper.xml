@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace是命名空间，不同的mapper映射文件使用namespace来做区分，不同的mapper映射文件namespace命名不允许出现重复，
+使用命名空间.sqlID的形式来找到我们想要执行的sql语句-->
+<mapper namespace="test1">
+<!--
+sql语句必须写在享相应的标签中
+<insert>:在标签对中写insert开头的语句，处理添加操作
+<update>
+<delete>
+<select>
+
+parameterType:为SQL语句传递的参数类型,这里的id是String类型
+resultType:返回类型，这里是Student类型，填写全路径
+-->
+    <select id="getById" parameterType="java.lang.String" resultType="com.bjpowernode.domain.Student">
+        select  id,name,age from student where id=#{id}
+    </select>
+</mapper>
