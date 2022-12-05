@@ -41,7 +41,7 @@ public class Test1 {
        参数1：：根据命名空间.sqlId的形式找到我们需要使用的SQL语句
        参数2：我们要为sql语句中传递的参数
          */
-        Student s = session.selectOne("test1.getById","A0001");   //跑到这里出现了bug
+        Student s = session.selectOne("test1.getById","1");   //跑到这里出现了bug
         System.out.println(s);//在Student类中写了toString方法，这里就可以直接输出s
         session.close();
     }
